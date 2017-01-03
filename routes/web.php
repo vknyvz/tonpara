@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('home');
+});
+
+Auth::routes();
+
+Route::group(['middleware' => ['web', 'auth']], function () {
+  Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
+  
+  Route::get('/home', 'IndexController@index');
 });
