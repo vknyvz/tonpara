@@ -48,13 +48,13 @@
             @yield('content')
             <!-- BEGIN FORGOT PASSWORD FORM -->
             <form class="forget-form" action="index.html" method="post">
-                <h3 class="font-green">Forget Password ?</h3>
-                <p> Enter your e-mail address below to reset your password. </p>
+                <h3 class="font-green">Şifremi Unuttum</h3>
+                <p> Şifrenizi yenilemek için lütfen e-posta'nızı girin.</p>
                 <div class="form-group">
-                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
+                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="E-Posta" name="email" /> </div>
                 <div class="form-actions">
-                    <button type="button" id="back-btn" class="btn green btn-outline">Back</button>
-                    <button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
+                    <button type="button" id="back-btn" class="btn green btn-outline">GERİ</button>
+                    <button type="submit" class="btn btn-success uppercase pull-right">Gönder</button>
                 </div>
             </form>
             <!-- END FORGOT PASSWORD FORM -->            
