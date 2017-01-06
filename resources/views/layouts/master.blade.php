@@ -94,7 +94,7 @@
                     <!-- BEGIN BREADCRUMBS -->
                     <ul class="page-breadcrumb">
                         <li>
-                            <a href="{{ route('index') }}">Dashboard</a>
+                            <a href="{{ route('index') }}">Ana Sayfa</a>
                         </li>                        
                     </ul>
                     <!-- END BREADCRUMBS -->
