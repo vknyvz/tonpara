@@ -40,7 +40,7 @@
         <!-- BEGIN LOGO -->
         <div class="logo">
             <a href="index.html">
-                <img src="/img/login/logo-big.png" alt="" /> </a>
+                <img src="/img/tonpara-logo.png" alt="" /> </a>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->

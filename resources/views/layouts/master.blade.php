@@ -44,7 +44,7 @@
                     <div class="havbar-header">
                         <!-- BEGIN LOGO -->
                         <a id="index" class="navbar-brand" href="start.html">
-                            <img src="/img/logo.png" alt="Logo"> </a>
+                            <img src="/img/tonpara-logo.png" alt="Logo"> </a>
                         <!-- END LOGO -->
                         <!-- BEGIN TOPBAR ACTIONS -->
                         <div class="topbar-actions">
