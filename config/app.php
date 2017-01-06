@@ -166,8 +166,9 @@ return [
         /*
          * Package Service Providers...
          */
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
-        //
 
         /*
          * Application Service Providers...
@@ -177,9 +178,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-      
-        Collective\Html\HtmlServiceProvider::class,
-
     ],
 
     /*

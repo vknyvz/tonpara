@@ -51,7 +51,7 @@
                             <!-- BEGIN GROUP NOTIFICATION -->
                             <div class="btn-group-notification btn-group" id="header_notification_bar">
                                 <button type="button" class="btn md-skip dropdown-toggle">
-                                    <span class="badge">2485 Altin</span>
+                                    <span class="badge">2485</span>
                                 </button>                               
                             </div>
                             <!-- END GROUP NOTIFICATION -->
@@ -63,7 +63,7 @@
                                     <ul class="dropdown-menu-v2" role="menu">
                                         <li>
                                             <a href="javascript:alert('not yet');">
-                                                <i class="icon-user"></i> Profİlİm
+                                                <i class="icon-user"></i> PROFİLİM
                                             </a>
                                         </li>                                        
                                         <li class="divider"> </li>
@@ -123,6 +123,15 @@
                                 </a>                                
                             </li>
                             <li class="heading">
+                                <h3 class="uppercase">KONTROL PANELİ</h3>
+                            </li>
+                            <li class="nav-item  ">
+                                <a href="{{ route('user.index') }}" class="nav-link ">
+                                    <i class="icon-social-dribbble"></i>
+                                    <span class="title">Kullanıcılar</span>
+                                </a>
+                            </li>
+                            <li class="heading">
                                 <h3 class="uppercase">Oyunlar</h3>
                             </li>
                             <li class="nav-item  ">
@@ -179,6 +188,8 @@
         <script src="/plugins/js.cookie.min.js" type="text/javascript"></script>
         <script src="/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
         <script src="/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+        <script src="/plugins/datatables/dataTables.responsive.js" type="text/javascript"></script>
         <script src="/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
         <!-- END CORE PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
@@ -196,6 +207,7 @@
         <script src="/js/quick-sidebar.min.js" type="text/javascript"></script>
         <script src="/js/quick-nav.min.js" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
+        @stack('scripts')
     </body>
 
 </html>

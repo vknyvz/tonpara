@@ -15,7 +15,8 @@
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*",
         "laravelcollective/html": "^5.3",
-        "filp/whoops": "^2.1"
+        "filp/whoops": "^2.1",
+        "yajra/laravel-datatables-oracle": "~6.0"
     },
     "autoload": {
         "classmap": [
