@@ -19,6 +19,9 @@
         "yajra/laravel-datatables-oracle": "~6.0"
     },
     "autoload": {
+    	"files": [
+            "app/Helpers/User.php"
+        ],
         "classmap": [
             "database"
         ],

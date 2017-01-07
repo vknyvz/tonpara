@@ -22,6 +22,8 @@
         <link href="/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+        <link href="/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" /> 
         <!-- END GLOBAL MANDATORY STYLES -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <link href="/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
@@ -58,7 +60,7 @@
                             <!-- BEGIN USER PROFILE -->
                             <div class="btn-group-img btn-group">
                                     <button type="button" class="btn btn-sm md-skip dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                        <span>Volkan Yavuz</span>
+                                        <span>{{ user()->name }}</span>                                        
                                          </button>
                                     <ul class="dropdown-menu-v2" role="menu">
                                         <li>
@@ -188,9 +190,13 @@
         <script src="/plugins/js.cookie.min.js" type="text/javascript"></script>
         <script src="/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
         <script src="/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-        <script src="/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
-        <script src="/plugins/datatables/dataTables.responsive.js" type="text/javascript"></script>
-        <script src="/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        
+        <script src="/plugins/datatables/datatable.js"></script>
+        <script src="/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+        <script src="/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+        <script src="/plugins/datatables/table-datatables-managed.js"></script>
+        
+        <script src="/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>        
         <!-- END CORE PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <script src="/plugins/moment.min.js" type="text/javascript"></script>
