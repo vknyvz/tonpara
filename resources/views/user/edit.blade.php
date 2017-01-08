@@ -45,7 +45,7 @@
                 <label for="group_id">Kullanıcı Grubu</label>
               </div>
               <div class="form-group form-md-line-input">
-                {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Kullanıcının Şifresi']) }} 
+                {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Kullanıcının Şifresi', 'autocomplete' => 'off']) }} 
                 <label for="password">Şifre</label>
                 <span class="help-block">Eğer kullanıcının şifresini değiştirmek istemiyorsan bir şey girmeyin.</span>
               </div>
