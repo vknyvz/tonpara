@@ -5,6 +5,7 @@ namespace App\Models\User;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\User\GroupRelation;
+use DB;
 
 class User extends Authenticatable
 {
@@ -17,19 +18,6 @@ class User extends Authenticatable
     protected $hidden = [
       'password', 'remember_token',
     ];
-    
-   /* public static function boot() {
-      $rel = new GroupRelation;
-      static::saving(function ($model) use($rel) {
-        if($model->group_id) {
-          $rel::where('user_id', $model->id)
-              ->where('group_id', '!=', $model->group_id)
-              ->delete();
-        }
-      });
-      
-      parent::boot();
-    }*/
     
     public function setPasswordAttribute($password)
     {
