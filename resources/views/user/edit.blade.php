@@ -84,7 +84,7 @@
                       <div class="list-datetime"><a href="" class="btn dark btn-xs">ÇIKART</a></div>
                       <div class="list-item-content">
                         <h3>
-                          <a href="javascript:;">Concept Proof</a>
+                          <a href="javascript:;">Not yet</a>
                         </h3>
                       </div>
                     </li>
