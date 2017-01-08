@@ -4,13 +4,11 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="javascript:;">
-      <i class="fa fa-edit"></i> Düzenle </a>
+      <a href="{{ route('user.update', [$row]) }}"><i class="fa fa-edit"></i> Düzenle </a>
     </li>
     <li class="divider"> </li>
     <li>
-      <a href="javascript:;">
-      <i class="fa fa-remove"></i> Sil</a>
+      <a href="javascript:;"><i class="fa fa-remove"></i> Sil</a>
     </li>
     
     

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Yajra\Datatables\Datatables; 
-use App\User;
 use App\Http\Requests\User\Request;
+use App\Models\User\{User, Group};
+use Html;
 
 class UserController extends Controller
 {
@@ -23,7 +24,21 @@ class UserController extends Controller
       $data = $request->all();
       $create = $user->create($data);
       if ($create) {
-        Session::flash('success', 'User Saved.');
+        $create->groups()->sync([$data['group_id']]);
+        return redirect()->route('user.index');
+      }
+    }
+  
+    return view('user.edit', ['row' => $user]);
+  }
+  
+  public function update(Request $request, User $user)
+  {
+    if ($request->isMethod('put')) {
+      $data = $request->all();
+      $update = $user->update($data);
+      if ($update) {
+        $user->groups()->sync([$data['group_id']]);
         return redirect()->route('user.index');
       }
     }
@@ -33,9 +48,18 @@ class UserController extends Controller
   
   public function data()
   {
-    $rows = User::query();
+    $rows = User::select('users.created_at', 'users.name', 'users.email', 'title', 'users.id')
+              ->group()
+              ->orderBy('users.id')
+              ->get();
     
     return Datatables::of($rows)
+      ->editColumn('name', function ($r) {
+        return Html::linkRoute('user.update', $r->name, [$r]);
+      })
+      ->editColumn('group', function ($r) {
+        return $r->title ?? '-';
+      })
       ->addColumn('created_at', function ($r) {
         return $r->created_at->format('d-m-Y G:i');
       })

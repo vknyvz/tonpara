@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding/.chars=UTF-8
+encoding//app/Http/Controllers/UserController.php=UTF-8
+encoding//app/Http/Requests/User/Request.php=UTF-8
 encoding//database/migrations/2017_01_06_095318_user_group.php=UTF-8
 encoding//resources/views/auth/login.blade.php=UTF-8
 encoding//resources/views/index/home.blade.php=UTF-8

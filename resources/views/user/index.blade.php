@@ -55,11 +55,12 @@ $(function() {
         "iDisplayLength": 50,
         ajax: '{!! route('user.data') !!}',
         columns: [
-            { data: 'id', name: 'users.id' },
-            { data: 'name', name: 'users.name' },
-            { data: 'email', name: 'users.email' },
-            { data: 'created_at', name: 'users.created_at' },
-            { data: 'action', name: 'action', orderable: false, searchable: false}
+          { data: 'id', name: 'users.id' },
+          { data: 'name', name: 'users.name' },
+          { data: 'email', name: 'users.email' },
+          { data: 'group', name: 'group_id' },
+          { data: 'created_at', name: 'users.created_at' },
+          { data: 'action', name: 'action', orderable: false, searchable: false}
         ],     
     });
 });
