@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Yajra\Datatables\Datatables; 
 use App\Http\Requests\User\Request;
-use App\Models\User\{User, Group};
+use App\Models\User\{User, Group, UserUsersRelation};
 use Html;
 
 class UserController extends Controller
@@ -44,6 +44,15 @@ class UserController extends Controller
     }
   
     return view('user.edit', ['row' => $user]);
+  }
+  
+  public function bindUser($user_id, $admin_id) {
+    $model = new UserUsersRelation;
+    $model->admin_id = $admin_id;
+    $model->user_id = $user_id;
+    $model->save();
+    
+    return back();
   }
   
   public function data()

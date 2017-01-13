@@ -20,6 +20,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('/list',           ['as' => 'index',        'uses' => 'UserController@index']);
     Route::any('/create',         ['as' => 'create',       'uses' => 'UserController@create']);
     Route::any('/update/{user}',  ['as' => 'update',       'uses' => 'UserController@update']);
+    
+    Route::get('/bind/{user_id}/{admin_id}', ['as' => 'bind',       'uses' => 'UserController@bindUser']);
+    
     Route::any('/data',           ['as' => 'data',         'uses' => 'UserController@data']);
   });
 });

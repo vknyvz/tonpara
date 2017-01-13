@@ -4,7 +4,7 @@
 
 <div class="page-fixed-main-content">
 	<div class="row">
-  	<div class="col-md-6">
+  	<div class="@if(isset($row->groups[0]->key) && ($row->groups[0]->key == 'super_admin' || $row->groups[0]->key == 'admin')) col-md-6 @else col-md-12 @endif">
       <div class="portlet light bordered">
         <div class="portlet-title">
           <div class="caption font-red-sunglo">
@@ -41,13 +41,13 @@
                 </div>
               </div>
               <div class="form-group form-md-line-input">
-                {{ Form::select('group_id', App\Models\User\Group::get()->pluck('title', 'id'), $row->id, ['class' => 'form-control select']) }}   
+                {{ Form::select('group_id', App\Models\User\Group::get()->pluck('title', 'id'), $row->group->group_id ?? '', ['class' => 'form-control select']) }}   
                 <label for="group_id">Kullanıcı Grubu</label>
               </div>
               <div class="form-group form-md-line-input">
                 {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Kullanıcının Şifresi', 'autocomplete' => 'off']) }} 
                 <label for="password">Şifre</label>
-                <span class="help-block">Eğer kullanıcının şifresini değiştirmek istemiyorsan bir şey girmeyin.</span>
+                <span class="help-block">Eğer kullanıcının şifresini değiştirmek istemiyorsan bir şey girme.</span>
               </div>
             </div>
             <div class="form-actions noborder">
@@ -57,6 +57,7 @@
         </div>
       </div>
     </div>
+    @if(isset($row->groups[0]->key) && ($row->groups[0]->key == 'super_admin' || $row->groups[0]->key == 'admin'))
     <div class="col-md-6">
     	<div class="portlet light bordered">
     		<div class="portlet-title">
@@ -77,6 +78,7 @@
                 </div>
                 <div class="mt-list-container list-simple">
                   <ul class="list-news ext-1">
+                    @foreach($row->getAdminUsers()->users as $user)  
                     <li class="mt-list-item">
                       <div class="list-icon-container done">
                         <i class="icon-user"></i>
@@ -84,10 +86,11 @@
                       <div class="list-datetime"><a href="" class="btn dark btn-xs">ÇIKART</a></div>
                       <div class="list-item-content">
                         <h3>
-                          <a href="javascript:;">Not yet</a>
+                          <a href="javascript:;">{{ $user->name }}</a>
                         </h3>
                       </div>
                     </li>
+                    @endforeach
                   </ul>
                 </div>
               </div>
@@ -106,7 +109,7 @@
                       <div class="list-icon-container done">
                         <i class="icon-user"></i>
                       </div>
-                      <div class="list-datetime"><a href="" class="btn green-haze btn-xs">Ata</a></div>
+                      <div class="list-datetime"><a href="{{ route('user.bind', ['bind_to_user_id' => $user->id, 'admin_id' => $row->id]) }}" class="btn green-haze btn-xs">Ata</a></div>
                       <div class="list-item-content">
                         <h3>{{ $user->name }}</h3>
                       </div>
@@ -120,6 +123,7 @@
 				</div> 
       </div>
     </div>
+    @endif
   </div>
 </div>
 @endsection

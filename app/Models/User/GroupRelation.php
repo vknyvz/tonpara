@@ -3,6 +3,7 @@
 namespace App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class GroupRelation extends Model
 {
@@ -15,6 +16,7 @@ class GroupRelation extends Model
                     ->join('users', 'users.id', '=', 'user_group_rel.user_id')    
                     ->join('user_group', 'user_group.id', '=', 'user_group_rel.group_id')
                     ->where('user_group.key', $group_key)
+                    //->whereNotIn('users.id', [DB::raw('select id from user_users_rel')])
                     ->get();
   }  
 }

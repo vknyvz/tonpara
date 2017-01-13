@@ -34,4 +34,17 @@ class User extends Authenticatable
     public function groups() {
       return $this->belongsToMany('\App\Models\User\Group', 'user_group_rel', 'user_id', 'group_id');
     }
+    
+    public function group() {
+      return $this->hasOne('\App\Models\User\GroupRelation', 'user_id');
+    }
+    
+    public function users() {
+      return $this->hasMany('App\Models\User\UserUsersRelation', 'admin_id')
+                ->join('users', 'users.id', '=', 'user_users_rel.user_id');
+    }
+    
+    public function getAdminUsers() {
+      return static::with(['users'])->find($this->id);
+    }
 }
