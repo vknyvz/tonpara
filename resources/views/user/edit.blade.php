@@ -78,7 +78,7 @@
                 </div>
                 <div class="mt-list-container list-simple">
                   <ul class="list-news ext-1">
-                    @foreach($row->getAdminsUsers() as $user)  
+                    @foreach($row->getAdminsUsers($row->id) as $user)  
                     <li class="mt-list-item">
                       <div class="list-icon-container done">
                         <i class="icon-user"></i>
