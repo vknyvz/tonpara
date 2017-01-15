@@ -133,6 +133,12 @@
                                     <span class="title">Kullanıcılar</span>
                                 </a>
                             </li>
+                            <li class="nav-item  ">
+                                <a href="#" class="nav-link ">
+                                    <i class="fa fa-history"></i>
+                                    <span class="title"> İşlem Geçmişi</span>
+                                </a>
+                            </li>                            
                             <li class="heading">
                                 <h3 class="uppercase">Oyunlar</h3>
                             </li>

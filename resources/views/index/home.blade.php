@@ -9,10 +9,11 @@
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-share font-dark hide"></i>
-                        <span class="caption-subject font-dark bold uppercase">Son İşlemler</span>
+                        <span class="caption-subject font-dark bold uppercase">Ana Menü</span>
                     </div>                                    
                 </div>
                 <div class="portlet-body">
+                   <!-- 
                     <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
                         <ul class="feeds">
                             <li>
@@ -52,7 +53,8 @@
                             </li>                                            
                             
                         </ul>
-                    </div>                                    
+                    </div>    
+                    -->                                
                 </div>
             </div>
         </div>                        
