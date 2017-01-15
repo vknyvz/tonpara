@@ -40,7 +40,7 @@ class User extends Authenticatable
     }
     
     public function getAdminsUsers() {
-      return static::select(['user_users_rel.id as user_id', 'users.name'])
+      return static::select(['user_users_rel.id as user_users_rel_id', 'users.id', 'users.name'])
                    ->join('user_users_rel', 'user_users_rel.user_id', '=', 'users.id')
                    ->get();
     }

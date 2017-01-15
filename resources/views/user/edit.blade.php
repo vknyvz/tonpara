@@ -83,10 +83,10 @@
                       <div class="list-icon-container done">
                         <i class="icon-user"></i>
                       </div>
-                      <div class="list-datetime"><a href="{{ route('user.unbind', ['id' => $user->user_id]) }}" class="btn dark btn-xs">ÇIKART</a></div>
+                      <div class="list-datetime"><a href="{{ route('user.unbind', ['id' => $user->user_users_rel_id]) }}" class="btn dark btn-xs">ÇIKART</a></div>
                       <div class="list-item-content">
                         <h3>
-                          <a href="javascript:;">{{ $user->name }}</a>
+                          <a href="{{ route('user.update', [$user->id]) }}">{{ $user->name }}</a>
                         </h3>
                       </div>
                     </li>
