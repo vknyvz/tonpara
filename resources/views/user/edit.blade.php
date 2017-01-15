@@ -78,12 +78,12 @@
                 </div>
                 <div class="mt-list-container list-simple">
                   <ul class="list-news ext-1">
-                    @foreach($row->getAdminUsers()->users as $user)  
+                    @foreach($row->getAdminsUsers() as $user)  
                     <li class="mt-list-item">
                       <div class="list-icon-container done">
                         <i class="icon-user"></i>
                       </div>
-                      <div class="list-datetime"><a href="" class="btn dark btn-xs">ÇIKART</a></div>
+                      <div class="list-datetime"><a href="{{ route('user.unbind', ['id' => $user->user_id]) }}" class="btn dark btn-xs">ÇIKART</a></div>
                       <div class="list-item-content">
                         <h3>
                           <a href="javascript:;">{{ $user->name }}</a>
@@ -95,16 +95,19 @@
                 </div>
               </div>
             </div>
+            @php 
+            $usersByGroups = \App\Models\User\GroupRelation::getUsersByGroups();
+            @endphp
             <div class="portlet-body">
               <div class="mt-element-list">
                 <div class="mt-list-head list-simple font-white bg-red">
                   <div class="list-head-title-container">
-                    <h3 class="list-title">Tüm kullanıcılar listesi <span class="badge badge-success">{{ count(\App\Models\User\GroupRelation::getUsersByGroups()) }}</span></h3>
+                    <h3 class="list-title">Tüm kullanıcılar listesi <span class="badge badge-success">{{ count($usersByGroups) }}</span></h3>
                   </div>
                 </div>
-                <div class="mt-list-container list-simple">
+                <div class="mt-list-container list-simple">                 
                   <ul>
-                    @foreach(\App\Models\User\GroupRelation::getUsersByGroups() as $user)
+                    @foreach($usersByGroups as $user)
                     <li class="mt-list-item">
                       <div class="list-icon-container done">
                         <i class="icon-user"></i>
@@ -114,6 +117,7 @@
                         <h3>{{ $user->name }}</h3>
                       </div>
                     </li>
+                    
                     @endforeach
                   </ul>
                 </div>

@@ -22,6 +22,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::any('/update/{user}',  ['as' => 'update',       'uses' => 'UserController@update']);
     
     Route::get('/bind/{user_id}/{admin_id}', ['as' => 'bind',       'uses' => 'UserController@bindUser']);
+    Route::get('/unbind/{id}', ['as' => 'unbind',       'uses' => 'UserController@unbindUser']);
     
     Route::any('/data',           ['as' => 'data',         'uses' => 'UserController@data']);
   });

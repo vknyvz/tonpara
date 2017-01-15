@@ -39,12 +39,9 @@ class User extends Authenticatable
       return $this->hasOne('\App\Models\User\GroupRelation', 'user_id');
     }
     
-    public function users() {
-      return $this->hasMany('App\Models\User\UserUsersRelation', 'admin_id')
-                ->join('users', 'users.id', '=', 'user_users_rel.user_id');
-    }
-    
-    public function getAdminUsers() {
-      return static::with(['users'])->find($this->id);
+    public function getAdminsUsers() {
+      return static::select(['user_users_rel.id as user_id', 'users.name'])
+                   ->join('user_users_rel', 'user_users_rel.user_id', '=', 'users.id')
+                   ->get();
     }
 }

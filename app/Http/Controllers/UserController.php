@@ -55,6 +55,11 @@ class UserController extends Controller
     return back();
   }
   
+  public function unbindUser($id) {
+    (new UserUsersRelation)->find($id)->delete();
+    return back();
+  }
+  
   public function data()
   {
     $rows = User::select('users.created_at', 'users.name', 'users.email', 'title', 'users.id')

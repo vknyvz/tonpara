@@ -168,7 +168,7 @@ return [
          */
         Yajra\Datatables\DatatablesServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
