@@ -26,4 +26,8 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     
     Route::any('/data',           ['as' => 'data',         'uses' => 'UserController@data']);
   });
+  
+  Route::group(['prefix' => 'log', 'as' => 'log.'], function() {
+    Route::get('/list',           ['as' => 'index',        'uses' => 'LogController@index']);
+  });
 });

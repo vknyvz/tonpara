@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\User\GroupRelation;
 use DB;
+use App\Models\Activity\Log;
 
 class User extends Authenticatable
 {
@@ -18,6 +19,18 @@ class User extends Authenticatable
     protected $hidden = [
       'password', 'remember_token',
     ];
+    
+    public static function boot() {
+      static::created(function ($model) {
+        Log::create(['activity' => 'user_register', 'created_by' => user()->id, 'payload' => $model->toJson()]);
+      });
+      
+      static::updated(function ($model) {
+        Log::create(['activity' => 'user_updated', 'created_by' => user()->id, 'payload' => $model->toJson()]);
+      });
+    
+      parent::boot();
+    }
     
     public function setPasswordAttribute($password)
     {

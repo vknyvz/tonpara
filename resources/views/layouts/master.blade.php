@@ -134,7 +134,7 @@
                                 </a>
                             </li>
                             <li class="nav-item  ">
-                                <a href="#" class="nav-link ">
+                                <a href="{{ route('log.index') }}" class="nav-link ">
                                     <i class="fa fa-history"></i>
                                     <span class="title"> İşlem Geçmişi</span>
                                 </a>

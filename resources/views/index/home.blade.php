@@ -12,50 +12,7 @@
                         <span class="caption-subject font-dark bold uppercase">Ana Menü</span>
                     </div>                                    
                 </div>
-                <div class="portlet-body">
-                   <!-- 
-                    <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
-                        <ul class="feeds">
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-info">
-                                                <i class="fa fa-user"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> Üye olundu.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2" style="width: 127px; margin-left: -133px;">
-                                    <div class="date"> Ocak 3 2017 </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-success">
-                                                <i class="fa fa-money"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> 2000 Kredi hesabına yüklendi. </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2" style="width: 127px; margin-left: -133px;">
-                                    <div class="date"> Ocak 4 2017 </div>
-                                </div>                                                
-                            </li>                                            
-                            
-                        </ul>
-                    </div>    
-                    -->                                
-                </div>
+                <div class="portlet-body"></div>
             </div>
         </div>                        
     </div>
